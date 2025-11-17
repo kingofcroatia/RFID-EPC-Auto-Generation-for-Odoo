@@ -280,7 +280,6 @@ Aurora Tech Group is a London-based technology solutions provider specializing i
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/kingofcroatia/rfid_epc_auto/issues)
 - **Email**: info@auroratechgroup.co.uk
 
 ---
