@@ -11,7 +11,6 @@
 
 *Enterprise-grade RFID automation for Odoo businesses*
 
-[Installation Guide](INSTALLATION.md) • [Documentation](PROJECT_SUMMARY.md) • [Troubleshooting](TROUBLESHOOTING.md) • [Contributing](CONTRIBUTING.md)
 
 </div>
 
@@ -85,7 +84,7 @@ sudo systemctl restart odoo
 # Apps → Update Apps List → Search "RFID" → Install
 ```
 
-**For detailed installation:** See [INSTALLATION.md](INSTALLATION.md)
+
 
 ---
 
@@ -226,17 +225,7 @@ Implemented RFID EPC Auto Generation module with Zebra ZT231R printer and integr
 - Restart Odoo
 - Check logs: `/var/log/odoo/odoo.log`
 
-**Full troubleshooting guide:** [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 
----
-
-## 🤝 Contributing
-
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
-- How to report bugs
-- How to suggest features
-- Code style guidelines
-- Pull request process
 
 ---
 
@@ -244,7 +233,6 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 
 This module is licensed under the GNU Lesser General Public License v3.0 (LGPL-3.0).
 
-See [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -276,34 +264,7 @@ Aurora Tech Group is a London-based technology solutions provider specializing i
 - 🌐 **Website**: https://auroratechgroup.co.uk
 - 📧 **Email**: info@auroratechgroup.co.uk
 - 📍 **Location**: London, United Kingdom
-- 💼 **LinkedIn**: [Aurora Tech Group](https://linkedin.com/company/aurora-tech-group)
 - 🐙 **GitHub**: [@kingofcroatia](https://github.com/kingofcroatia)
-
----
-
-## 💼 Professional Services
-
-Aurora Tech Group offers professional services for this module:
-
-### Implementation Services
-- Installation and configuration
-- Printer setup and calibration
-- Integration with existing systems
-- Staff training and documentation
-
-### Development Services
-- Custom features and modifications
-- Additional EPC schemes
-- Integration with other RFID systems
-- Bulk data processing solutions
-
-### Support Services
-- Priority bug fixes
-- Dedicated support channel
-- SLA-backed response times
-- Regular updates and maintenance
-
-**Get a Quote:** info@auroratechgroup.co.uk
 
 ---
 
@@ -320,19 +281,7 @@ Aurora Tech Group offers professional services for this module:
 ## 📞 Support
 
 - **Issues**: [GitHub Issues](https://github.com/kingofcroatia/rfid_epc_auto/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/kingofcroatia/rfid_epc_auto/discussions)
 - **Email**: info@auroratechgroup.co.uk
-- **Documentation**: [Full Documentation](PROJECT_SUMMARY.md)
-
----
-
-## 📚 Learn More
-
-- [Installation Guide](INSTALLATION.md) - Step-by-step installation
-- [Project Summary](PROJECT_SUMMARY.md) - Technical deep-dive
-- [Troubleshooting](TROUBLESHOOTING.md) - Common issues and solutions
-- [Contributing](CONTRIBUTING.md) - How to contribute
-- [Changelog](CHANGELOG.md) - Version history
 
 ---
 
