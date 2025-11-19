@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2025 Aurora Tech Group LTD, London, UK
+    Developer: Andrew
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0).
+-->
+<odoo>
+    <!-- Product Template Form View -->
+    <record id="product_template_form_view_rfid" model="ir.ui.view">
+        <field name="name">product.template.form.rfid</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='inventory']" position="inside">
+                <group string="RFID Serial Numbers" name="rfid_serials">
+                    <field name="use_sequential_rfid"/>
+                    <field name="last_rfid_serial"
+                           invisible="not use_sequential_rfid"
+                           readonly="1"/>
+                    <field name="auto_generated_barcode" invisible="1"/>
+
+                    <!-- Sequential Mode Info Box -->
+                    <div invisible="not use_sequential_rfid"
+                         class="alert alert-info" role="alert">
+                        <strong><i class="fa fa-info-circle"/> Sequential Mode Active</strong><br/>
+                        <br/>
+                        Next RFID label will use serial: <strong><field name="last_rfid_serial" readonly="1" nolabel="1"/> + 1</strong><br/>
+                        <br/>
+                        <small>
+                            <strong>Benefits:</strong><br/>
+                            • Each print increments counter automatically<br/>
+                            • Track total production count<br/>
+                            • Perfect for inventory management<br/>
+                            • Easy to debug and audit
+                        </small>
+                    </div>
+
+                    <!-- Random Mode Warning Box -->
+                    <div invisible="use_sequential_rfid"
+                         class="alert alert-warning" role="alert">
+                        <strong><i class="fa fa-exclamation-triangle"/> Random Mode Active</strong><br/>
+                        <br/>
+                        Each label gets a random serial number (1 to 274 billion).<br/>
+                        <br/>
+                        <small>
+                            <strong>Note:</strong> Can't track total production count in this mode.
+                        </small>
+                    </div>
+
+                    <!-- Auto-Generated Barcode Info -->
+                    <div invisible="not auto_generated_barcode"
+                         class="alert alert-success" role="alert">
+                        <i class="fa fa-check-circle"/> Barcode was auto-generated from Product ID (internal use only)
+                    </div>
+
+                    <!-- Reset Counter Button -->
+                    <button name="action_reset_rfid_counter"
+                            string="Reset Counter to 0"
+                            type="object"
+                            icon="fa-refresh"
+                            class="btn-secondary"
+                            invisible="last_rfid_serial == 0"
+                            confirm="Are you sure you want to reset the RFID serial counter to 0? This action cannot be undone."/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Product Variant Form View -->
+    <record id="product_variant_form_view_rfid" model="ir.ui.view">
+        <field name="name">product.product.form.rfid</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='inventory']" position="inside">
+                <group string="RFID Serial Numbers" name="rfid_serials">
+                    <field name="use_sequential_rfid"/>
+                    <field name="last_rfid_serial"
+                           invisible="not use_sequential_rfid"
+                           readonly="1"/>
+                    <field name="auto_generated_barcode" invisible="1"/>
+
+                    <div invisible="not use_sequential_rfid"
+                         class="text-muted">
+                        Next serial: <strong><field name="last_rfid_serial" readonly="1" nolabel="1"/> + 1</strong>
+                    </div>
+
+                    <button name="action_reset_rfid_counter"
+                            string="Reset Counter"
+                            type="object"
+                            icon="fa-refresh"
+                            class="btn-sm btn-secondary"
+                            invisible="last_rfid_serial == 0"
+                            confirm="Reset RFID counter to 0?"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
