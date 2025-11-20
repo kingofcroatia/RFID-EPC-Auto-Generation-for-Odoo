@@ -151,8 +151,8 @@ Serial Number:  237532810220 (random)
 ### Serial Number Generation
 
 - **Range**: 1 to 274,877,906,943 (2^38 - 1)
-- **Method**: Cryptographically secure random generation
-- **Uniqueness**: Extremely low collision probability
+- **Method**: Cryptographically secure sequential generation
+- **Uniqueness**: No collision
 - **Format**: Unsigned integer
 
 ---
